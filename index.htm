@@ -29,7 +29,7 @@
 <body>
   <div id="map"></div>
   <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZG9tbGV0IiwiYSI6ImNtZzVyeG1hYTA3cXEyaXE0Ymp6MHBsNDIifQ.PBPONoWC4rGjYQCPHtF-bw';
+    mapboxgl.accessToken = 'pk.eyJ1IjoidGFqYW5lYXRoZWJlc3QiLCJhIjoiY21obnpxNHQwMDV0ZzJxcG16N3JtNjd4ZCJ9.TtmkVDCDKcu81Q6MfK25bQ';
     const map = new mapboxgl.Map({
       container: 'map',
       /*
@@ -61,6 +61,7 @@
               "properties": {
                 'name': "my first popup",
                 'description': "I went to the movies here",
+                'image': "img/jacklondon.png"
               }
             },
             {
@@ -72,6 +73,7 @@
               "properties": {
                 'name': "my 2nd popup",
                 'description': "I went to go read here",
+                'image': "img/library.png"
               }
             },
             {
@@ -83,6 +85,7 @@
               "properties": {
                 'name': "my 3rd popup",
                 'description': "I went to go to the park here",
+                'image': "img/lakeshabot.png"
               }
             }
           ]
@@ -107,12 +110,13 @@
           const coordinates = e.feature.geometry.coordinates.slice();
           const name = e.feature.properties.name;
           const description = e.feature.properties.description;
-          // const image = e.feature.properties.image;
+          
+          const image = e.feature.properties.image;
 
           new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML("<strong>" + name + "</strong><br/>" + description)
-            // .setHTML("<img src='" + image + "'><br><strong>" + name + "</strong><br/>" + description)
+            
+            .setHTML("<img src='" + image + "'><br><strong>" + name + "</strong><br/>" + description)
             .addTo(map);
         }
       });

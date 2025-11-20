@@ -3,7 +3,7 @@
 ## What did i build?
 I built this to let others experience looking through other peoples experiences in places they've gone to in the Bay Area. 
 
-!["my first map" Giphy](img/demo.gif)
+!["my first map" Giphy](img/Demo.gif)
 
 ## Explore the map
 
